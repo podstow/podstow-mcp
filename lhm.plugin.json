@@ -5,6 +5,7 @@
   "cloudEndpoint": "https://mcp.podstow.app/",
   "description": "Text to speech MCP server: send articles or AI-written text to a private podcast RSS feed.",
   "homepage": "https://podstow.com/assistants/?utm_source=lobehub&utm_medium=directory&utm_campaign=mcp-listing",
+  "icon": "https://podstow.com/shared/icons/icon-512.png",
   "identifier": "podstow-podstow-mcp",
   "name": "Podstow",
   "tags": [
