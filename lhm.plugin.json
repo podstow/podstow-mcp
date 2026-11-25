@@ -8,6 +8,14 @@
   "icon": "https://podstow.com/shared/icons/icon-512.png",
   "identifier": "podstow-podstow-mcp",
   "name": "Podstow",
+  "resources": [
+    {
+      "uri": "ui://podstow/onboarding-card",
+      "name": "podstow onboarding card",
+      "description": "The card show_listen_instructions renders in clients that support MCP Apps: an Open podstow button, and on desktop a QR code and the feed URL for subscribing in a podcast app.",
+      "mimeType": "text/html;profile=mcp-app"
+    }
+  ],
   "tags": [
     "text-to-speech",
     "podcast",
