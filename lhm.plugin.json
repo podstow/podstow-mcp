@@ -1,0 +1,140 @@
+{
+  "author": "podstow",
+  "authorUrl": "https://podstow.com",
+  "category": "productivity",
+  "cloudEndpoint": "https://mcp.podstow.app/",
+  "description": "Text to speech MCP server: send articles or AI-written text to a private podcast RSS feed.",
+  "homepage": "https://podstow.com/assistants/?utm_source=lobehub&utm_medium=directory&utm_campaign=mcp-listing",
+  "identifier": "podstow-podstow-mcp",
+  "name": "Podstow",
+  "tags": [
+    "text-to-speech",
+    "podcast",
+    "rss",
+    "read-later",
+    "audio"
+  ],
+  "tools": [
+    {
+      "name": "submit_url",
+      "description": "Send the URL of an article, blog post or web page to the user's podstow feed. podstow reads the page, narrates it with text to speech and publishes a podcast episode.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "A complete https:// URL to a publicly readable article."
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "submit_text",
+      "description": "Publish plain text the assistant wrote (a summary, research report or digest) to the user's podstow feed as a podcast episode, titled with an [AI] prefix.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Short episode title."
+          },
+          "text": {
+            "type": "string",
+            "description": "Plain-text body of the episode."
+          },
+          "author": {
+            "type": "string",
+            "description": "Defaults to the connected app's name."
+          },
+          "description": {
+            "type": "string",
+            "description": "Short summary shown in podcast apps."
+          },
+          "sourceUrl": {
+            "type": "string",
+            "description": "A URL the episode links back to."
+          },
+          "lang": {
+            "type": "string",
+            "description": "BCP-47 language tag, such as en, de or fr. Sets the voice."
+          }
+        },
+        "required": [
+          "title",
+          "text"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "list_episodes",
+      "description": "List the user's most recent podstow episodes, with titles, links, publish dates and a handle for each transcript.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "description": "Page size. Default 20, maximum 50."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "Cursor from a previous call's nextCursor."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_episode_transcript",
+      "description": "Return the transcript of an episode: an inline preview and a link to the full text.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "transcriptHandle": {
+            "type": "string",
+            "description": "Handle from a list_episodes item."
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Byte offset where the returned slice starts."
+          },
+          "maxBytes": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Maximum bytes to return in the preview."
+          }
+        },
+        "required": [
+          "transcriptHandle"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_account",
+      "description": "Return the user's plan, article usage and limits, voice preferences, and whether they are set up to listen.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "show_listen_instructions",
+      "description": "Show the user how to listen: open podstow on this device, or subscribe to their feed in a podcast app.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  ],
+  "version": "1.0.0"
+}
