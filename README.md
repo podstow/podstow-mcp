@@ -90,3 +90,7 @@ Episodes land in your private RSS feed. The feed has a private link nobody can g
 - Support: <https://podstow.com/support/>
 - Privacy: <https://podstow.com/privacy>
 - Official MCP Registry: `app.podstow/podstow`
+
+## Licence
+
+The documentation and configuration snippets in this repository are released under the [MIT licence](LICENSE). The licence covers this repository only. The podstow service is a hosted product, and its code is not here.
