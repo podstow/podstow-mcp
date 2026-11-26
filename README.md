@@ -27,7 +27,7 @@ It reads your text. It does not make a show out of it: one voice, the source rea
 Developer mode, on the web, with a Plus, Pro, Business, Enterprise or Edu plan.
 
 1. Turn on developer mode: **Settings → Security and login → Developer mode**.
-2. Go to chatgpt.com/plugins, select **+**, give it a name and description, and paste `https://mcp.podstow.app/` exactly as shown. Do not add `/mcp` to the end: the server answers at the root.
+2. Go to chatgpt.com/plugins, select **+**, give it a name and description, and paste `https://mcp.podstow.app/` exactly as shown.
 3. Sign in to podstow when ChatGPT prompts you.
 4. In a chat, pick podstow from the **+** menu.
 
